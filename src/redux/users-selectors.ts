@@ -1,5 +1,5 @@
 import {createSelector} from "reselect";
-import {UserType} from "./users-reducer";
+import {UserType} from "./users/types/users";
 
 const getUsersSelector = (state: any): UserType[] => {
     return state.usersPage.users;
@@ -8,7 +8,7 @@ const getUsersSelector = (state: any): UserType[] => {
 export const getUsers = createSelector(
     getUsersSelector,
     (users: UserType[]) => {
-        return users.filter(u => true);
+        return users;
     })
 
 export const getPageSize = (state: any): number => {

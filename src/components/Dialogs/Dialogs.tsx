@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import AddMessageForm from "./AddMessageForm/AddMessageForm";
-import {DialogStateType} from "../../redux/dialogs-reducer";
+import {DialogStateType} from "../../redux/dialogs/types/dialogs";
 
 type DialogsPropsType = {
     dialogsPage: DialogStateType;

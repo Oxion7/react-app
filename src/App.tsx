@@ -6,8 +6,8 @@ import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
 import {connect, ConnectedProps} from "react-redux";
-import {initializeApp} from "./redux/app-reducer";
-import {RootState} from "./redux/redux-store";
+import {initializeApp} from "./redux/app/app-reducer";
+import {RootState} from "./redux/store/redux-store";
 import Preloader from "./components/common/Preloader/Preloader";
 
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));

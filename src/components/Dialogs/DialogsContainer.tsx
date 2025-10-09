@@ -1,9 +1,9 @@
 import React from 'react';
-import {selectDialog, sendMessageCreator} from "../../redux/dialogs-reducer";
+import {selectDialog, sendMessageCreator} from "../../redux/dialogs/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {useDispatch, useSelector} from "react-redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
-import {RootState} from "../../redux/redux-store";
+import {RootState} from "../../redux/store/redux-store";
 
 const DialogsContainer: React.FC = () => {
     const dispatch = useDispatch();

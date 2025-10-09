@@ -4,9 +4,9 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {connect, ConnectedProps} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {login} from "../../redux/auth-reducer";
+import {login} from "../../redux/auth/auth-reducer";
 import styles from "./../common/FormsControls/FormsControls.module.css";
-import {RootState} from "../../redux/redux-store";
+import {RootState} from "../../redux/store/redux-store";
 
 type LoginFormValuesType = {
     email: string;

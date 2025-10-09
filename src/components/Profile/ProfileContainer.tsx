@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatus, getUserProfile, ProfileType, updateStatus} from "../../redux/profile-reducer";
+import {getStatus, getUserProfile, updateStatus} from "../../redux/profile/profile-reducer";
 import {useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
-
+import {ProfileType} from "../../redux/profile/types/profile";
 
 type ProfileContainerPropsType = {
     profile: ProfileType

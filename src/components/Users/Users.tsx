@@ -1,7 +1,7 @@
 import React from 'react';
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
-import {UserType} from "../../redux/users-reducer";
+import {UserType} from "../../redux/users/types/users";
 
 type UsersPropsType = {
     currentPage: number;
