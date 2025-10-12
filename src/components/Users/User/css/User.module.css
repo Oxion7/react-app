@@ -1,0 +1,162 @@
+.userContainer {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.userContainer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.userPhoto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.userPhoto:hover {
+    transform: scale(1.05);
+    border-color: #4CAF50;
+}
+
+.userInfoSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.userMainInfo {
+    flex: 1;
+}
+
+.userName {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.userStatus {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.userLocation {
+    text-align: right;
+    padding-left: 20px;
+}
+
+.locationCountry {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.locationCity {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.followButton {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    min-width: 100px;
+}
+
+.followButton:not(:disabled) {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+.followButton:not(:disabled):hover {
+    background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.unfollowButton {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+.unfollowButton:not(:disabled):hover {
+    background: linear-gradient(135deg, #ee5a52 0%, #ff6b6b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.followButton:disabled {
+    background: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.userActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .userContainer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .userInfoSection {
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .userLocation {
+        text-align: center;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .userActions {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .userPhoto {
+        width: 70px;
+        height: 70px;
+    }
+}

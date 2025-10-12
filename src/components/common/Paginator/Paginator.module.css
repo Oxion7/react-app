@@ -1,0 +1,240 @@
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 30px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.paginationButton {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+}
+
+.paginationButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.paginationButton:active {
+  transform: translateY(0);
+}
+
+.paginationButton:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.pagesContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 8px 12px;
+  border: 2px solid #e1e8ed;
+  border-radius: 10px;
+  background: white;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.pageNumber:hover:not(.selectedPage) {
+  border-color: #667eea;
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.pageNumber.selectedPage {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  font-weight: 600;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  color: #7f8c8d;
+  font-weight: 600;
+  user-select: none;
+}
+
+.pageInfo {
+  color: #7f8c8d;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-left: 15px;
+  padding: 8px 15px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  border: 1px solid #e1e8ed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .paginator {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    margin: 20px 10px;
+  }
+
+  .paginationControls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .pagesContainer {
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pageNumber {
+    min-width: 35px;
+    height: 35px;
+    font-size: 0.9em;
+  }
+
+  .paginationButton {
+    padding: 8px 16px;
+    font-size: 0.85em;
+    min-width: 70px;
+  }
+
+  .pageInfo {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagesContainer {
+    gap: 4px;
+  }
+
+  .pageNumber {
+    min-width: 32px;
+    height: 32px;
+    padding: 6px 8px;
+    font-size: 0.85em;
+  }
+
+  .paginationButton {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    min-width: 60px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .paginator {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .pageNumber {
+    background: #3d3d3d;
+    border-color: #505050;
+    color: white;
+  }
+
+  .pageNumber:hover:not(.selectedPage) {
+    background: #4d4d4d;
+    border-color: #667eea;
+  }
+
+  .pageInfo {
+    background: #3d3d3d;
+    border-color: #505050;
+    color: #bdc3c7;
+  }
+
+  .ellipsis {
+    color: #bdc3c7;
+  }
+}
+
+/* Animation for page changes */
+@keyframes pageChange {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pageNumber {
+  animation: pageChange 0.2s ease-out;
+}
+
+/* Loading state */
+.paginator.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.paginator.loading .pageNumber,
+.paginator.loading .paginationButton {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
