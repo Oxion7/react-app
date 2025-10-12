@@ -9,8 +9,9 @@ import {connect, ConnectedProps} from "react-redux";
 import {initializeApp} from "../../redux/app/app-reducer";
 import {RootState} from "../../redux/store/redux-store";
 import Preloader from "../common/Preloader/Preloader";
-import DialogsContainer from "../Dialogs/DialogsContainer/DialogsContainer";
-import ProfileContainer from "../Profile/ProfileContainer/ProfileContainer";
+
+const ProfileContainer = React.lazy(() => import("../Profile/ProfileContainer/ProfileContainer"));
+const DialogsContainer = React.lazy(() => import("../Dialogs/DialogsContainer/DialogsContainer"));
 
 class App extends React.Component<AppProps> {
     componentDidMount() {
