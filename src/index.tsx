@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import SNSApp from "./App";
+import SNSApp from "./components/app/App";
 import ReactDOM from 'react-dom/client';
 import {Provider} from "react-redux";
 import store from "./redux/store/redux-store";

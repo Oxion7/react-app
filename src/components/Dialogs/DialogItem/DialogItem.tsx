@@ -1,16 +1,6 @@
 import React from 'react';
-import s from './../Dialogs.module.css';
-
-type DialogItemPropsType = {
-    name: string;
-    id: number;
-    lastMessage?: string;
-    lastMessageTime?: string;
-    isActive: boolean;
-    isOnline?: boolean;
-    unreadCount?: number;
-    onSelect: (id: number) => void;
-}
+import s from "./css/DialogItem.module.css"
+import {DialogItemPropsType} from "./types/DialogItem";
 
 const DialogItem: React.FC<DialogItemPropsType> = (props) => {
     const getInitials = (name: string) => {

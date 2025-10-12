@@ -8,16 +8,8 @@ import {login} from "../../redux/auth/auth-reducer";
 import styles from "./../common/FormsControls/FormsControls.module.css";
 import {RootState} from "../../redux/store/redux-store";
 
-type LoginFormValuesType = {
-    email: string;
-    password: string;
-    rememberMe: boolean;
-}
-type LoginFormPropsType = {
-    onSubmit: (values: LoginFormValuesType) => void;
-    error: string | null;
-}
 type LoginPropsType = ConnectedProps<typeof connector>
+
 const LoginForm: React.FC<LoginFormPropsType> = ({onSubmit, error}) => {
     const formik = useFormik({
         initialValues: {

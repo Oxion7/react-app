@@ -1,10 +1,6 @@
 import React from 'react';
-import s from './../Dialogs.module.css';
-
-type MessagePropsType = {
-    message: string;
-    isOutgoing?: boolean;
-}
+import s from './css/Message.module.css';
+import {MessagePropsType} from "./types/Message";
 
 const Message: React.FC<MessagePropsType> = (props) => {
     const isOutgoing = props.isOutgoing || false;

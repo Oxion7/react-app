@@ -1,14 +1,8 @@
 import React from 'react';
-import s from './ProfileInfo.module.css';
+import s from './css/ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
-import {ProfileType} from "../../../redux/profile/types/profile";
-
-type ProfileInfoPropsType = {
-    profile: ProfileType | null;
-    status: string;
-    updateStatus: (status: string) => void;
-}
+import {ProfileInfoPropsType} from "./types/ProfileInfo";
 
 const ProfileInfo: React.FC<ProfileInfoPropsType> = ({profile, status, updateStatus}) => {
 

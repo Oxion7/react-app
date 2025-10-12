@@ -1,0 +1,129 @@
+.descriptionBlock {
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.descriptionBlock img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e1e8ed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.descriptionBlock img:hover {
+  transform: scale(1.05);
+  border-color: #667eea;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+/* Profile Status Styles */
+.profileStatus {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border: 1px solid #e1e8ed;
+}
+
+.statusDisplay {
+  font-size: 1.1em;
+  color: #2c3e50;
+  padding: 12px 20px;
+  border-radius: 25px;
+  background: white;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.statusDisplay:hover {
+  border-color: #667eea;
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+}
+
+.statusInput {
+  font-size: 1.1em;
+  padding: 12px 20px;
+  border: 2px solid #667eea;
+  border-radius: 25px;
+  background: white;
+  outline: none;
+  min-width: 200px;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.statusInput:focus {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .descriptionBlock {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .descriptionBlock img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .statusDisplay,
+  .statusInput {
+    min-width: 150px;
+    font-size: 1em;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .descriptionBlock {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .descriptionBlock img {
+    border-color: #505050;
+  }
+
+  .profileStatus {
+    background: #3d3d3d;
+    border-color: #404040;
+  }
+
+  .statusDisplay {
+    background: #2d2d2d;
+    color: white;
+  }
+
+  .statusDisplay:hover {
+    background: #3d3d3d;
+    border-color: #667eea;
+  }
+
+  .statusInput {
+    background: #2d2d2d;
+    border-color: #667eea;
+    color: white;
+  }
+}

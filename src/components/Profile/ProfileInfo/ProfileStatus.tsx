@@ -1,10 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import s from './ProfileInfo.module.css';
-
-type ProfileStatusPropsType = {
-    status: string;
-    updateStatus: (status: string) => void;
-}
+import s from './css/ProfileInfo.module.css';
+import {ProfileStatusPropsType} from "./types/ProfileInfo";
 
 const ProfileStatus: React.FC<ProfileStatusPropsType> = (props) => {
     const [editMode, setEditMode] = useState(false);
